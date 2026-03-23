@@ -1,3 +1,4 @@
+/*
 package com.raghul.task_manager_app.persistence.repository.impl;
 
 import com.raghul.task_manager_app.persistence.model.Project;
@@ -17,13 +18,15 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     private static final Logger log = LoggerFactory.getLogger(ProjectRepositoryImpl.class);
     List<Project> projects = new ArrayList<>();
 
+*/
 /*
     @Value("${project.prefix}")
     private  String prefix;
 
     @Value("${project.suffix}")
     private String suffix;
-*/
+*//*
+
 
 
 
@@ -32,8 +35,58 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     }
 
     @Override
+    public <S extends Project> Iterable<S> saveAll(Iterable<S> entities) {
+        return null;
+    }
+
+    @Override
     public Optional<Project> findById(Long id) {
         return projects.stream().filter(p -> p.getId() == id).findFirst();
+    }
+
+    @Override
+    public boolean existsById(Long aLong) {
+        return false;
+    }
+
+    @Override
+    public Iterable<Project> findAll() {
+        return null;
+    }
+
+    @Override
+    public Iterable<Project> findAllById(Iterable<Long> longs) {
+        return null;
+    }
+
+    @Override
+    public long count() {
+        return 0;
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+
+    }
+
+    @Override
+    public void delete(Project entity) {
+
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
+
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Project> entities) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
     }
 
     @Override
@@ -61,3 +114,4 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     }
 
 }
+*/

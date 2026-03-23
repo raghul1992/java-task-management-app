@@ -1,38 +1,44 @@
 package com.raghul.task_manager_app.persistence.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Random;
 
+@Entity
 public class Project {
 
+    @Id
     private Long id;
     private String name;
     private LocalDate dateCreated;
     private String internalId;
 
 
-    public Project(Long id, String name, LocalDate dateCreated) {
-
-        if(Objects.isNull(id)){
-            id = new Random().nextLong();
-        }
-
-        this.id = id;
-        this.name = name;
-        this.dateCreated = dateCreated;
+    public Project() {
     }
-
     public Project(String name, LocalDate dateCreated) {
         this.id = new Random().nextLong();
         this.name = name;
         this.dateCreated = dateCreated;
     }
 
-    public Project(Project project) {
-        this(project.getId(), project.getName(), project.getDateCreated());
-    }
 
+   public Project(Long id, String name, LocalDate dateCreated) {
+
+       if(Objects.isNull(id)){
+           id = new Random().nextLong();
+       }
+
+       this.id = id;
+       this.name = name;
+       this.dateCreated = dateCreated;
+   }
+   public Project(Project project) {
+       this(project.getId(), project.getName(), project.getDateCreated());
+   }
     public Long getId() {
         return id;
     }
