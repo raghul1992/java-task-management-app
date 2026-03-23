@@ -17,11 +17,13 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     private static final Logger log = LoggerFactory.getLogger(ProjectRepositoryImpl.class);
     List<Project> projects = new ArrayList<>();
 
+/*
     @Value("${project.prefix}")
     private  String prefix;
 
     @Value("${project.suffix}")
     private String suffix;
+*/
 
 
 
@@ -49,12 +51,13 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     }
 
     private void updateInternalId(Project project){
-        log.info("prepending prefix  :  "+prefix);
-        log.info("appending suffix   :  "+suffix);
+      //  log.info("prepending prefix  :  "+prefix);
+      //  log.info("appending suffix   :  "+suffix);
 
-        project.setInternalId(prefix + "-" + project.getId() + "-" + suffix);
+     //   project.setInternalId(prefix + "-" + project.getId() + "-" + suffix);
+        project.setInternalId( project.getId() + "-" );
 
-        log.info("generated id  :  "+project.getId());
+       // log.info("generated id  :  "+project.getId());
     }
 
 }
